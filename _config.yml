@@ -33,12 +33,12 @@ twitter:
   card: summary
 logo: logo.png
 social:
-  name: Songzi Vong
+  name: Live-block
   links:
     - https://twitter.com/vszhub
     - https://github.com/vszhub
 google_site_verification: xxxxx
-lang: en
+lang: zh-CN
 
 sass:
   sass_dir: _sass
@@ -54,6 +54,6 @@ sass:
 
 # Specify the author for blog posts
 author:
-  name: Songzi Vong
-  url: https://github.com/vszhub/
+  name: Live-block
+  url: https://github.com/live-block/
   email: liveblock@qq.com
