@@ -1,5 +1,5 @@
 - title: Email
-  url: mailto:"{{liveblock@qq.com}}"
+  url: mailto:liveblock@qq.com
   icon: fas fa-envelope
 - title: Twitter
   url: https://twitter.com/
