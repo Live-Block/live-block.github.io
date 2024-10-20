@@ -8,7 +8,6 @@ hero:
 image:
     src: /docs/img/img0.jpg
     alt: logo
-
   actions:
     - theme: brand
       text: 开始学习
