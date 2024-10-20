@@ -8,11 +8,10 @@ hero:
 image:
     src: /docs/img/img0.jpg
     alt: logo
-  actions:
+actions:
     - theme: brand
       text: 开始学习
       link: /guide/introduction
-
     - theme: alt
       text: GitHub
       link: https://github.com/live-block/live-block.github.io
