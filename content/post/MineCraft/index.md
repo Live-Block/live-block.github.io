@@ -2,7 +2,7 @@
 title: 安慕希无脑下载教程
 description: 我真是服了，又要把这个弄上来
 date: 2025-03-22
-image: cover.jpg
+image: cover.png
 categories:
     - Java
     - Memory
