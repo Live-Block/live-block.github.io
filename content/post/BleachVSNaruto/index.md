@@ -1,11 +1,10 @@
 ---
 title: 死神VS火影 v3.8.5.2
-description: 不是老弟你就玩吧，玩得你嬉皮笑脸的
+description: 玩须佐佐助的，没错就是你洪狗，给我爪巴
 date: 2025-03-15
 image: cover.jpg
 categories:
-    - Flash Game
-    - Childhood
+    - Flash
     - Memory
 ---
 
