@@ -1,6 +1,6 @@
 ---
-title: 安慕希无脑下载教程
-description: 我真是服了，又要把这个弄上来
+title: MineCraft 下载教程
+description: 这个已经够无脑得不能再无脑了
 date: 2025-03-22
 image: cover.png
 categories:
@@ -10,9 +10,9 @@ categories:
 
 # 安装
 
-::: warning 警告
+{{< alert warning >}}
 你有可能会被我们 **`高贵的信息老师`** 关闭游戏并点名
-:::
+{{< /alert >}}
 
 ## 安装前需要的东西
 
@@ -30,14 +30,11 @@ categories:
 
 安装完毕后，打开 **HMCL-3.6.11**<br>下载游戏版本你自己挑选
 
-> **如果你想和 `其他同学` 联机游玩的话，请你下载带有以下条件的版本<br>( 联机需要版本以及其他条件完全一致 )**
+> **如果你想和 `其他同学` 联机游玩的话，请你下载与同学一样的版本<br>( 联机需要版本以及其他条件完全一致 )**
 >
-> - **Minecraft <u>1.8.9</u>**
-> - **Forge <u>11.15.1.2318</u> ( 可装可不装 )** 
-> - **Optifine <u>HD U M5</u> ( 可装可不装 )**
->
-> **不装 Forge 与 Optifine 可加快安装速度**
-
-![version](https://cdn.jsdelivr.net/gh/live-block/live-block.github.io@main/docs/img/version.png)
+> - **<u>Minecraft</u>**
+> - **<u>Optifine</u> ( 装的话默认最新版，装了更流畅 )**
+> 
+>**不装 Optifine 可加快安装速度，MC版本自行约定 ( 必须相同 )**
 
 安装完成后，账户列表选择 **离线模式** ，输入你想要的名字 ( 建议 **英文字母** 或 **数字** ，否则无法联机 )<br>然后你就可以 **启动游戏** 了

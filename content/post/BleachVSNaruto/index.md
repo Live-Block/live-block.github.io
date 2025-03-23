@@ -14,6 +14,8 @@ categories:
 
 [下载 -> 死神VS火影 v3.8.5.2](https://share.feijipan.com/s/saGOZHaz) ( 应该不用登录就可以下载吧... )
 
+下载之后直接点exe，已经附带了解压程序
+
 局联网对战选项在这
 
 ![LAN](https://raw.gitmirror.com/live-block/live-block.github.io/main/content/post/BleachVSNaruto/LAN.png)
