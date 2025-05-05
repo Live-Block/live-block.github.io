@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>System on 静弦之室</title><link>https://liveblock.ggff.net/categories/system/</link><description>Recent content in System on 静弦之室</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://liveblock.ggff.net/categories/system/index.xml" rel="self" type="application/rss+xml"/><item><title>如何修复 Old登 弄坏的Wifi</title><link>https://liveblock.ggff.net/p/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D-old%E7%99%BB-%E5%BC%84%E5%9D%8F%E7%9A%84wifi/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/p/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D-old%E7%99%BB-%E5%BC%84%E5%9D%8F%E7%9A%84wifi/</guid><description>&lt;h1 id="这只是个标题">&lt;a href="#%e8%bf%99%e5%8f%aa%e6%98%af%e4%b8%aa%e6%a0%87%e9%a2%98" class="header-anchor">&lt;/a>这只是个标题
+&lt;/h1>&lt;h3 id="一检查组策略设置-这个试过了估计没用">&lt;a href="#%e4%b8%80%e6%a3%80%e6%9f%a5%e7%bb%84%e7%ad%96%e7%95%a5%e8%ae%be%e7%bd%ae-%e8%bf%99%e4%b8%aa%e8%af%95%e8%bf%87%e4%ba%86%e4%bc%b0%e8%ae%a1%e6%b2%a1%e7%94%a8" class="header-anchor">&lt;/a>&lt;strong>一、检查组策略设置 (这个试过了估计没用)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>打开组策略编辑器&lt;/strong>：
+&lt;ul>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>gpedit.msc&lt;/code> 回车。&lt;/li>
+&lt;li>导航至：
+&lt;code>计算机配置 → 管理模板 → 网络 → 网络连接&lt;/code>
+检查右侧是否有 &lt;strong>“禁止访问LAN连接属性”&lt;/strong> 或 &lt;strong>“禁用无线设备”&lt;/strong> 的策略，将其设置为 &lt;strong>“未配置”&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>设备安装限制&lt;/strong>：
+&lt;ul>
+&lt;li>进入路径：
+&lt;code>计算机配置 → 管理模板 → 系统 → 设备安装 → 设备安装限制&lt;/code>
+确保没有启用 &lt;strong>“禁止安装可移动设备”&lt;/strong> 或 &lt;strong>“阻止使用与下列设备安装程序类相匹配的驱动程序安装设备”&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="二检查计划任务-感觉这个最大可能">&lt;a href="#%e4%ba%8c%e6%a3%80%e6%9f%a5%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1-%e6%84%9f%e8%a7%89%e8%bf%99%e4%b8%aa%e6%9c%80%e5%a4%a7%e5%8f%af%e8%83%bd" class="header-anchor">&lt;/a>&lt;strong>二、检查计划任务 (感觉这个最大可能)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>taskschd.msc&lt;/code> 打开任务计划程序。&lt;/li>
+&lt;li>在 &lt;strong>任务计划程序库&lt;/strong> 中，查找近期创建的任务，尤其是触发条件为“重复任务”或“系统启动”的任务。&lt;/li>
+&lt;li>检查任务操作中是否有禁用无线网卡的命令（如 &lt;code>devcon disable&lt;/code> 或 &lt;code>netsh&lt;/code> 命令）。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="三检查服务状态-这个我也试过了">&lt;a href="#%e4%b8%89%e6%a3%80%e6%9f%a5%e6%9c%8d%e5%8a%a1%e7%8a%b6%e6%80%81-%e8%bf%99%e4%b8%aa%e6%88%91%e4%b9%9f%e8%af%95%e8%bf%87%e4%ba%86" class="header-anchor">&lt;/a>&lt;strong>三、检查服务状态 (这个我也试过了)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>services.msc&lt;/code>。&lt;/li>
+&lt;li>找到 &lt;strong>WLAN AutoConfig&lt;/strong> 服务，确保其状态为 &lt;strong>“正在运行”&lt;/strong>，启动类型为 &lt;strong>“自动”&lt;/strong>。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="四注册表检查-谨慎操作-建议等我来">&lt;a href="#%e5%9b%9b%e6%b3%a8%e5%86%8c%e8%a1%a8%e6%a3%80%e6%9f%a5-%e8%b0%a8%e6%85%8e%e6%93%8d%e4%bd%9c-%e5%bb%ba%e8%ae%ae%e7%ad%89%e6%88%91%e6%9d%a5" class="header-anchor">&lt;/a>&lt;strong>四、注册表检查 (谨慎操作 建议等我来)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>regedit&lt;/code>。&lt;/li>
+&lt;li>导航至：
+&lt;code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS&lt;/code>
+检查右侧是否有异常项，或 &lt;code>Start&lt;/code> 值是否为 &lt;code>3&lt;/code>（手动启动）。&lt;/li>
+&lt;li>&lt;strong>警告&lt;/strong>：修改注册表前建议备份，误操作可能导致系统不稳定。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="五命令行尝试强制启用">&lt;a href="#%e4%ba%94%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b0%9d%e8%af%95%e5%bc%ba%e5%88%b6%e5%90%af%e7%94%a8" class="header-anchor">&lt;/a>&lt;strong>五、命令行尝试强制启用&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>以管理员身份打开命令提示符（CMD）或 PowerShell。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入以下命令查看无线网卡硬件ID：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">powershell &amp;#34;Get-NetAdapter | Where-Object {$_.PhysicalMediaType -eq &amp;#39;Native 802.11&amp;#39;}&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用硬件ID启用设备（替换 &lt;code>&amp;lt;ID&amp;gt;&lt;/code>）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">devcon enable &amp;#34;&amp;lt;ID&amp;gt;&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>（若未安装 &lt;code>devcon&lt;/code>，可从微软官网下载 &lt;a class="link" href="https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener"
+>Windows Driver Kit&lt;/a> 获取工具）&lt;/p>
+&lt;/li>
+&lt;/ol></description></item></channel></rss>

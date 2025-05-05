@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>静弦之室</title><link>https://liveblock.ggff.net/</link><description>Recent content on 静弦之室</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Mon, 05 May 2025 00:00:00 +0000</lastBuildDate><atom:link href="https://liveblock.ggff.net/index.xml" rel="self" type="application/rss+xml"/><item><title>如何修复 Old登 弄坏的Wifi</title><link>https://liveblock.ggff.net/p/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D-old%E7%99%BB-%E5%BC%84%E5%9D%8F%E7%9A%84wifi/</link><pubDate>Mon, 05 May 2025 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/p/%E5%A6%82%E4%BD%95%E4%BF%AE%E5%A4%8D-old%E7%99%BB-%E5%BC%84%E5%9D%8F%E7%9A%84wifi/</guid><description>&lt;h1 id="这只是个标题">&lt;a href="#%e8%bf%99%e5%8f%aa%e6%98%af%e4%b8%aa%e6%a0%87%e9%a2%98" class="header-anchor">&lt;/a>这只是个标题
+&lt;/h1>&lt;h3 id="一检查组策略设置-这个试过了估计没用">&lt;a href="#%e4%b8%80%e6%a3%80%e6%9f%a5%e7%bb%84%e7%ad%96%e7%95%a5%e8%ae%be%e7%bd%ae-%e8%bf%99%e4%b8%aa%e8%af%95%e8%bf%87%e4%ba%86%e4%bc%b0%e8%ae%a1%e6%b2%a1%e7%94%a8" class="header-anchor">&lt;/a>&lt;strong>一、检查组策略设置 (这个试过了估计没用)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>&lt;strong>打开组策略编辑器&lt;/strong>：
+&lt;ul>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>gpedit.msc&lt;/code> 回车。&lt;/li>
+&lt;li>导航至：
+&lt;code>计算机配置 → 管理模板 → 网络 → 网络连接&lt;/code>
+检查右侧是否有 &lt;strong>“禁止访问LAN连接属性”&lt;/strong> 或 &lt;strong>“禁用无线设备”&lt;/strong> 的策略，将其设置为 &lt;strong>“未配置”&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;li>&lt;strong>设备安装限制&lt;/strong>：
+&lt;ul>
+&lt;li>进入路径：
+&lt;code>计算机配置 → 管理模板 → 系统 → 设备安装 → 设备安装限制&lt;/code>
+确保没有启用 &lt;strong>“禁止安装可移动设备”&lt;/strong> 或 &lt;strong>“阻止使用与下列设备安装程序类相匹配的驱动程序安装设备”&lt;/strong>。&lt;/li>
+&lt;/ul>
+&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="二检查计划任务-感觉这个最大可能">&lt;a href="#%e4%ba%8c%e6%a3%80%e6%9f%a5%e8%ae%a1%e5%88%92%e4%bb%bb%e5%8a%a1-%e6%84%9f%e8%a7%89%e8%bf%99%e4%b8%aa%e6%9c%80%e5%a4%a7%e5%8f%af%e8%83%bd" class="header-anchor">&lt;/a>&lt;strong>二、检查计划任务 (感觉这个最大可能)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>taskschd.msc&lt;/code> 打开任务计划程序。&lt;/li>
+&lt;li>在 &lt;strong>任务计划程序库&lt;/strong> 中，查找近期创建的任务，尤其是触发条件为“重复任务”或“系统启动”的任务。&lt;/li>
+&lt;li>检查任务操作中是否有禁用无线网卡的命令（如 &lt;code>devcon disable&lt;/code> 或 &lt;code>netsh&lt;/code> 命令）。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="三检查服务状态-这个我也试过了">&lt;a href="#%e4%b8%89%e6%a3%80%e6%9f%a5%e6%9c%8d%e5%8a%a1%e7%8a%b6%e6%80%81-%e8%bf%99%e4%b8%aa%e6%88%91%e4%b9%9f%e8%af%95%e8%bf%87%e4%ba%86" class="header-anchor">&lt;/a>&lt;strong>三、检查服务状态 (这个我也试过了)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>services.msc&lt;/code>。&lt;/li>
+&lt;li>找到 &lt;strong>WLAN AutoConfig&lt;/strong> 服务，确保其状态为 &lt;strong>“正在运行”&lt;/strong>，启动类型为 &lt;strong>“自动”&lt;/strong>。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="四注册表检查-谨慎操作-建议等我来">&lt;a href="#%e5%9b%9b%e6%b3%a8%e5%86%8c%e8%a1%a8%e6%a3%80%e6%9f%a5-%e8%b0%a8%e6%85%8e%e6%93%8d%e4%bd%9c-%e5%bb%ba%e8%ae%ae%e7%ad%89%e6%88%91%e6%9d%a5" class="header-anchor">&lt;/a>&lt;strong>四、注册表检查 (谨慎操作 建议等我来)&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>按 &lt;code>Win + R&lt;/code> 输入 &lt;code>regedit&lt;/code>。&lt;/li>
+&lt;li>导航至：
+&lt;code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\NDIS&lt;/code>
+检查右侧是否有异常项，或 &lt;code>Start&lt;/code> 值是否为 &lt;code>3&lt;/code>（手动启动）。&lt;/li>
+&lt;li>&lt;strong>警告&lt;/strong>：修改注册表前建议备份，误操作可能导致系统不稳定。&lt;/li>
+&lt;/ol>
+&lt;hr>
+&lt;h3 id="五命令行尝试强制启用">&lt;a href="#%e4%ba%94%e5%91%bd%e4%bb%a4%e8%a1%8c%e5%b0%9d%e8%af%95%e5%bc%ba%e5%88%b6%e5%90%af%e7%94%a8" class="header-anchor">&lt;/a>&lt;strong>五、命令行尝试强制启用&lt;/strong>
+&lt;/h3>&lt;ol>
+&lt;li>
+&lt;p>以管理员身份打开命令提示符（CMD）或 PowerShell。&lt;/p>
+&lt;/li>
+&lt;li>
+&lt;p>输入以下命令查看无线网卡硬件ID：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">powershell &amp;#34;Get-NetAdapter | Where-Object {$_.PhysicalMediaType -eq &amp;#39;Native 802.11&amp;#39;}&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;/li>
+&lt;li>
+&lt;p>使用硬件ID启用设备（替换 &lt;code>&amp;lt;ID&amp;gt;&lt;/code>）：&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-fallback" data-lang="fallback">&lt;span class="line">&lt;span class="cl">devcon enable &amp;#34;&amp;lt;ID&amp;gt;&amp;#34;
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>（若未安装 &lt;code>devcon&lt;/code>，可从微软官网下载 &lt;a class="link" href="https://docs.microsoft.com/en-us/windows-hardware/drivers/download-the-wdk" target="_blank" rel="noopener"
+>Windows Driver Kit&lt;/a> 获取工具）&lt;/p>
+&lt;/li>
+&lt;/ol></description></item><item><title>摆脱"梅花"的全屏广播</title><link>https://liveblock.ggff.net/p/%E6%91%86%E8%84%B1%E6%A2%85%E8%8A%B1%E7%9A%84%E5%85%A8%E5%B1%8F%E5%B9%BF%E6%92%AD/</link><pubDate>Sun, 23 Mar 2025 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/p/%E6%91%86%E8%84%B1%E6%A2%85%E8%8A%B1%E7%9A%84%E5%85%A8%E5%B1%8F%E5%B9%BF%E6%92%AD/</guid><description>&lt;img src="https://liveblock.ggff.net/p/%E6%91%86%E8%84%B1%E6%A2%85%E8%8A%B1%E7%9A%84%E5%85%A8%E5%B1%8F%E5%B9%BF%E6%92%AD/cover.png" alt="Featured image of post 摆脱"梅花"的全屏广播" />&lt;h2 id="所用软件">&lt;a href="#%e6%89%80%e7%94%a8%e8%bd%af%e4%bb%b6" class="header-anchor">&lt;/a>所用软件
+&lt;/h2>&lt;h2 id="警告">&lt;a href="#%e8%ad%a6%e5%91%8a" class="header-anchor">&lt;/a>警告
+&lt;/h2>&lt;p>对于只是不想被打断活动的同学，只使用 &lt;strong>&lt;code>JiYuTrainer&lt;/code>&lt;/strong> 即可，请不要动下方的 &lt;strong>&lt;code>JiYuUDP&lt;/code>&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.123pan.com/s/o31KVv-PnS3A.html" target="_blank" rel="noopener"
+>JiYuTrainer&lt;/a> ( &lt;strong>窗口式广播&lt;/strong> 且 &lt;strong>不断线&lt;/strong> 并 &lt;strong>正常收消息&lt;/strong> )&lt;/li>
+&lt;/ul>
+&lt;h2 id="危险">&lt;a href="#%e5%8d%b1%e9%99%a9" class="header-anchor">&lt;/a>危险
+&lt;/h2>&lt;p>对于 &lt;strong>&lt;code>JiYuUDP&lt;/code>&lt;/strong> 本人不承担因 **&lt;code>使用者自身胡乱使用 &lt;/code>**而造成的 &lt;strong>&lt;code>任何后果&lt;/code>&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;a class="link" href="https://www.123pan.com/s/o31KVv-GnS3A.html" target="_blank" rel="noopener"
+>JiYuUDP&lt;/a> ( 别乱动 ! ! ! )&lt;/li>
+&lt;/ul></description></item><item><title>MineCraft 下载教程</title><link>https://liveblock.ggff.net/p/minecraft-%E4%B8%8B%E8%BD%BD%E6%95%99%E7%A8%8B/</link><pubDate>Sat, 22 Mar 2025 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/p/minecraft-%E4%B8%8B%E8%BD%BD%E6%95%99%E7%A8%8B/</guid><description>&lt;img src="https://liveblock.ggff.net/p/minecraft-%E4%B8%8B%E8%BD%BD%E6%95%99%E7%A8%8B/cover.png" alt="Featured image of post MineCraft 下载教程" />&lt;h1 id="安装">&lt;a href="#%e5%ae%89%e8%a3%85" class="header-anchor">&lt;/a>安装
+&lt;/h1>&lt;h3 id="警告">&lt;a href="#%e8%ad%a6%e5%91%8a" class="header-anchor">&lt;/a>警告
+&lt;/h3>&lt;p>你有可能会被我们 &lt;strong>&lt;code>高贵的信息老师&lt;/code>&lt;/strong> 关闭游戏并点名&lt;/p>
+&lt;h2 id="安装前需要的东西">&lt;a href="#%e5%ae%89%e8%a3%85%e5%89%8d%e9%9c%80%e8%a6%81%e7%9a%84%e4%b8%9c%e8%a5%bf" class="header-anchor">&lt;/a>安装前需要的东西
+&lt;/h2>&lt;p>我在这里将所需的文件全部上传到了网盘&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;a class="link" href="https://www.123684.com/s/o31KVv-q6K3A" target="_blank" rel="noopener"
+>Java 8&lt;/a> ( 我的世界是基于Java语言开发的游戏，需要此环境运行 )&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;a class="link" href="https://www.123684.com/s/o31KVv-3Gu3A" target="_blank" rel="noopener"
+>HMCL启动器&lt;/a> ( 打开启动器前先安装上面的Java 8 )&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>进入下载页面后，请点击 &lt;strong>&lt;code>浏览器下载&lt;/code>&lt;/strong>，可以直接下载&lt;/p>
+&lt;h2 id="如何安装并游玩">&lt;a href="#%e5%a6%82%e4%bd%95%e5%ae%89%e8%a3%85%e5%b9%b6%e6%b8%b8%e7%8e%a9" class="header-anchor">&lt;/a>如何安装并游玩
+&lt;/h2>&lt;p>下载完所需文件后，首先安装 &lt;strong>jre-8u431-windows-x64&lt;/strong> ( 目录别管，反正下节课就重置 )&lt;/p>
+&lt;p>安装完毕后，打开 &lt;strong>HMCL-3.6.11&lt;/strong>&lt;br>下载游戏版本你自己挑选&lt;/p>
+&lt;blockquote>
+&lt;p>&lt;strong>如果你想和 &lt;code>其他同学&lt;/code> 联机游玩的话，请你下载与同学一样的版本&lt;br>( 联机需要版本以及其他条件完全一致 )&lt;/strong>&lt;/p>
+&lt;ul>
+&lt;li>&lt;strong>&lt;u>Minecraft&lt;/u>&lt;/strong>&lt;/li>
+&lt;li>&lt;strong>&lt;u>Optifine&lt;/u> ( 装的话默认最新版，装了更流畅 )&lt;/strong>&lt;/li>
+&lt;/ul>
+&lt;p>&lt;strong>不装 Optifine 可加快安装速度，MC版本自行约定 ( 必须相同 )&lt;/strong>&lt;/p>&lt;/blockquote>
+&lt;p>安装完成后，账户列表选择 &lt;strong>离线模式&lt;/strong> ，输入你想要的名字 ( 建议 &lt;strong>英文字母&lt;/strong> 或 &lt;strong>数字&lt;/strong> ，否则无法联机 )&lt;br>然后你就可以 &lt;strong>启动游戏&lt;/strong> 了&lt;/p></description></item><item><title>死神VS火影 v3.8.5.2</title><link>https://liveblock.ggff.net/p/%E6%AD%BB%E7%A5%9Evs%E7%81%AB%E5%BD%B1-v3.8.5.2/</link><pubDate>Sat, 15 Mar 2025 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/p/%E6%AD%BB%E7%A5%9Evs%E7%81%AB%E5%BD%B1-v3.8.5.2/</guid><description>&lt;img src="https://liveblock.ggff.net/p/%E6%AD%BB%E7%A5%9Evs%E7%81%AB%E5%BD%B1-v3.8.5.2/cover.jpg" alt="Featured image of post 死神VS火影 v3.8.5.2" />&lt;h2 id="快来玩死神vs火影">&lt;a href="#%e5%bf%ab%e6%9d%a5%e7%8e%a9%e6%ad%bb%e7%a5%9evs%e7%81%ab%e5%bd%b1" class="header-anchor">&lt;/a>快来玩死神VS火影
+&lt;/h2>&lt;p>我直说吧，没时间写教程了，只能在这里丢个游戏让你们进去琢磨怎么联机了，不过还是蛮简单的吧&lt;/p>
+&lt;p>&lt;a class="link" href="https://share.feijipan.com/s/saGOZHaz" target="_blank" rel="noopener"
+>下载 -&amp;gt; 死神VS火影 v3.8.5.2&lt;/a> ( 应该不用登录就可以下载吧&amp;hellip; )&lt;/p>
+&lt;p>下载之后直接点exe，已经附带了解压程序&lt;/p>
+&lt;p>局联网对战选项在这&lt;/p>
+&lt;p>&lt;img src="https://raw.gitmirror.com/live-block/live-block.github.io/main/content/post/BleachVSNaruto/LAN.png"
+loading="lazy"
+alt="LAN"
+>&lt;/p>
+&lt;p>进去以后是这样的，在评论区约定一下，一个人开，一个人加入&lt;/p>
+&lt;p>&lt;img src="https://raw.gitmirror.com/live-block/live-block.github.io/main/content/post/BleachVSNaruto/InLAN.png"
+loading="lazy"
+alt="InLAN"
+>&lt;/p>
+&lt;p>这已经很清晰了然了吧，如果你还不会的话，那我建议你还是好好做题吧，毕竟通用技术还是可以让你提升一下智商的 T-T&lt;/p></description></item><item><title>归档</title><link>https://liveblock.ggff.net/archives/</link><pubDate>Sun, 06 Mar 2022 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/archives/</guid><description/></item><item><title>搜索</title><link>https://liveblock.ggff.net/search/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/search/</guid><description/></item><item><title>友链</title><link>https://liveblock.ggff.net/%E5%8F%8B%E9%93%BE/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://liveblock.ggff.net/%E5%8F%8B%E9%93%BE/</guid><description>&lt;p>To use this feature, add &lt;code>links&lt;/code> section to frontmatter.&lt;/p>
+&lt;p>This page&amp;rsquo;s frontmatter:&lt;/p>
+&lt;div class="highlight">&lt;div class="chroma">
+&lt;table class="lntable">&lt;tr>&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
+&lt;/span>&lt;span class="lnt">2
+&lt;/span>&lt;span class="lnt">3
+&lt;/span>&lt;span class="lnt">4
+&lt;/span>&lt;span class="lnt">5
+&lt;/span>&lt;span class="lnt">6
+&lt;/span>&lt;span class="lnt">7
+&lt;/span>&lt;span class="lnt">8
+&lt;/span>&lt;span class="lnt">9
+&lt;/span>&lt;/code>&lt;/pre>&lt;/td>
+&lt;td class="lntd">
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-yaml" data-lang="yaml">&lt;span class="line">&lt;span class="cl">&lt;span class="nt">links&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">GitHub is the world&amp;#39;s largest software development platform.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.com&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>- &lt;span class="nt">title&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">description&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">TypeScript is a typed superset of JavaScript that compiles to plain JavaScript.&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">website&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">https://www.typescriptlang.org&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="w"> &lt;/span>&lt;span class="nt">image&lt;/span>&lt;span class="p">:&lt;/span>&lt;span class="w"> &lt;/span>&lt;span class="l">ts-logo-128.jpg&lt;/span>&lt;span class="w">
+&lt;/span>&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
+&lt;/div>
+&lt;/div>&lt;p>&lt;code>image&lt;/code> field accepts both local and external images.&lt;/p></description></item></channel></rss>
